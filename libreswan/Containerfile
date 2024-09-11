@@ -7,6 +7,6 @@ COPY my-host-to-host.conf /etc/ipsec.d/
 
 # RHEL entitled host is needed here to access RHEL packages
 # Install libreswan as extra RHEL package
-RUN rpm-ostree install libreswan && \
+RUN dnf install libreswan && \
     systemctl enable ipsec && \
     ostree container commit
